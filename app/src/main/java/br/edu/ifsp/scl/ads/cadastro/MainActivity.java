@@ -2,6 +2,7 @@ package br.edu.ifsp.scl.ads.cadastro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
         femininoRb = findViewById(R.id.femininoRb);
         cidade = findViewById(R.id.cidadeEt);
         uf = findViewById(R.id.ufSp);
+        salvarBt = findViewById(R.id.salvarBt);
+        limparBt = findViewById(R.id.limparBt);
 
-        form = new Formulario();
         salvarBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +56,23 @@ public class MainActivity extends AppCompatActivity {
                 form.setSexo(sexo);
                 form.setCidade(cidade.getText().toString());
                 form.setUf(uf.getSelectedItem().toString());
+
+                Context contexto = getApplicationContext();
+                String texto = form.toString();
+                int duracao = Toast.LENGTH_LONG;
+
+                Toast toast = Toast.makeText(contexto, texto, duracao);
+                toast.show();
             }
         });
 
+        limparBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nomeEt.setText("");
+                telefoneEt.setText("");
+                emailEt.setText("");
+            }
+        });
     }
 }

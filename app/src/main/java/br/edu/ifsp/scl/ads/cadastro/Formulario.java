@@ -72,7 +72,7 @@ public class Formulario {
     @Override
     public String toString() {
         return "Nome completo: " + nomeCompleto + ", telefone: " + telefone + ", email: " + email
-                + "Incluso na lista de emails: " + listaEmails + ", sexo: " + sexo + ", cidade: " +
+                + ", incluso na lista de emails: " + listaEmails + ", sexo: " + sexo + ", cidade: " +
                 cidade + ", UF: " + uf;
     }
 }
