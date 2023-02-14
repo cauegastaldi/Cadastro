@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Cadastro</string>
+    <string-array name="unidades_federativas">
+        <item>Acre</item>
+        <item>Rondônia</item>
+        <item>São Paulo</item>
+        <item>Minas Gerais</item>
+        <item>Rio de Janeiro</item>
+    </string-array>
 </resources>

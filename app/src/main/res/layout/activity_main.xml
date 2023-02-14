@@ -15,13 +15,164 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="Nome completo"
         android:textColor="@color/black"
+        android:layout_marginStart="5dp"
+        />
+
+
+    <EditText
+        android:id="@+id/nomeEt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/nomeTv"
+        android:layout_marginStart="5dp"
+    />
+
+    <TextView
+        android:id="@+id/telefoneTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/nomeEt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="5dp"
+    />
+
+    <EditText
+        android:id="@+id/telefoneEt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@id/telefoneTv"
+        android:hint="Ex: 12-93456-7890"
+        android:layout_marginStart="5dp"
+    />
+
+    <TextView
+        android:id="@+id/emailTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/telefoneEt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
         />
 
     <EditText
+        android:id="@+id/emailEt"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/emailTv"
+        android:layout_marginStart="5dp"
+        />
+
+    <CheckBox
+        android:id="@+id/listaEmailCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingressar na lista de e-mails?"
+        app:layout_constraintTop_toBottomOf="@id/emailEt"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/sexoTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/listaEmailCb"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/sexoRg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sexoTv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/masculinoRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masculino"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/femininoRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feminino"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/cidadeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/sexoRg"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
+        />
+
+    <EditText
+        android:id="@+id/cidadeEt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/nomeTv"
-    />
+        app:layout_constraintTop_toBottomOf="@id/cidadeTv"
+        android:layout_marginStart="5dp"
+        />
+
+    <TextView
+        android:id="@+id/ufTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UF"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/cidadeEt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="5dp"
+        />
+
+    <Spinner
+        android:id="@+id/ufSp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ufTv"
+        android:entries="@array/unidades_federativas"
+        />
+
+    <Button
+        android:id="@+id/limparBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ufSp"
+        android:layout_marginStart="5dp"
+        />
+
+    <Button
+        android:id="@+id/salvarBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        app:layout_constraintStart_toEndOf="@id/limparBt"
+        app:layout_constraintTop_toBottomOf="@id/ufSp"
+        android:layout_marginStart="5dp"
+
+        />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
