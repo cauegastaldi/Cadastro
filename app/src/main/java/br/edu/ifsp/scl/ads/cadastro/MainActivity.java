@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox listaEmailCb;
     private RadioButton masculinoRb;
     private RadioButton femininoRb;
-    private EditText cidade;
-    private Spinner uf;
+    private EditText cidadeEt;
+    private Spinner ufSp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         listaEmailCb = findViewById(R.id.listaEmailCb);
         masculinoRb = findViewById(R.id.masculinoRb);
         femininoRb = findViewById(R.id.femininoRb);
-        cidade = findViewById(R.id.cidadeEt);
-        uf = findViewById(R.id.ufSp);
+        cidadeEt = findViewById(R.id.cidadeEt);
+        ufSp = findViewById(R.id.ufSp);
         salvarBt = findViewById(R.id.salvarBt);
         limparBt = findViewById(R.id.limparBt);
 
@@ -54,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 String sexo = (masculinoRb.isChecked()) ?
                         masculinoRb.getText().toString() : femininoRb.getText().toString();
                 form.setSexo(sexo);
-                form.setCidade(cidade.getText().toString());
-                form.setUf(uf.getSelectedItem().toString());
+                form.setCidade(cidadeEt.getText().toString());
+                form.setUf(ufSp.getSelectedItem().toString());
 
                 Context contexto = getApplicationContext();
                 String texto = form.toString();
@@ -72,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 nomeEt.setText("");
                 telefoneEt.setText("");
                 emailEt.setText("");
+                listaEmailCb.setChecked(false);
+                masculinoRb.setChecked(true);
+                cidadeEt.setText("");
+                ufSp.setSelection(0);
             }
         });
     }
